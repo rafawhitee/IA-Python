@@ -1,7 +1,7 @@
 from VetorOrdenado import VetorOrdenado
 
 
-class Gulosa:
+class AEstrela:
     def __init__(self, objetivo):
         self.objetivo = objetivo
         self.encontrado = False
@@ -18,7 +18,9 @@ class Gulosa:
             for adjacente in atual.adjacentes:
                 if adjacente.vertice.visitado == False:
                     adjacente.vertice.visitado = True
-                    vetor_ordenado.insere(adjacente.vertice)
+                    vertice = adjacente.vertice
+                    vertice.distancia_objetivo = vertice.distancia_objetivo + adjacente.custo
+                    vetor_ordenado.insere(vertice)
             vetor_ordenado.imprime()
 
             if vetor_ordenado.valores[0] != None:
