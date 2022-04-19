@@ -48,14 +48,14 @@ sistema_controle = ctrl.ControlSystem([regra1, regra2, regra3])
 sistema = ctrl.ControlSystemSimulation(sistema_controle)
 
 # insere as entradas (no caso, qualidade e servico)
-sistema.input['qualidade'] = 8.5
-sistema.input['servico'] = 6.5
+sistema.input['qualidade'] = 10
+sistema.input['servico'] = 2
 
 # executa
 sistema.compute()
 
 # printa a saida (no caso gorjeta)
 print(sistema.output['gorjeta'])
-gorjeta.view(sis = sistema)
+gorjeta.view(sim = sistema)
 
 plt.show()
